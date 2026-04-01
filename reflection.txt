@@ -1,0 +1,32 @@
+Briefly describe the five errors. How did running the tests help or hurt with debugging the problems in the code?
+The five errors were that subtract() subtracted a from b rather than b from a, multiply() was misspelled, is_prime() returned False as long as n was greater than 2, is_even() was checking that n%2==1, and is_fizzbuzz() returned True if is_even() was True. Running the tests helped me immediately determine where issues were but was unhelpful for functions such as is_fizzbuzz(), which did not have tests.
+Which errors were more difficult to detect than others?
+It was more difficult to detect errors that were not present in tests. The failing tests clued me in on where to check for issues within the code.
+Conduct a brief review of the code and tests. How can the code and calculator.py and test cases in test_calculator.py be improved?
+The test cases should cover all functions and mutations, essentially covering all possible branches, to fully test calculator.py. It would make sense to first write tests prior to writing code.
+With a partner or small group, discuss the following: What is your general experience with unit testing? What tools and frameworks have you used? Do you have prior experience with pytest?
+We have experience with unit testing in class and have written mostly JUnit tests. None of us have pytest experience.
+Which uncovered code paths were most likely to hide real bugs? Why?
+The most likely paths to hide real bugs were those that covered entire untested functions and not just error cases that lacked tests.
+This activity only focuses on line coverage. Add the --cov-branch argument to include branch coverage for this test suite. What is the branch coverage of the updated test suite, and how would you modify the test cases to increase the branch/path coverage for this program?
+The branch coverage of the updated test suite is 86%. I would modify the tests by inlcuding tests for all possible branches, including all errors that can be generated from the tests.
+Compare your experience here to Task 1: if calculator.py had a coverage report before you started, would it have pointed you directly to the buggy lines?
+The coverage report would not have pointed me directly to the buggy lines, since they were covered by the tests but still resulted in failure. Also, the test for calculator.py did not have full coverage.
+How can the concepts of test coverage and unit testing affect your future development practices?
+I can use test coverage to judge whether I have adequately tested all branches of my code. Unit testing will allow me to catch bugs early in development prior to integration.
+What prompt did you use to generate the tests? How could the prompt be improved? What challenges did you face forming the prompt?
+The prompt I used was "Generate a test file for quiz.py to cover all branches of the functions." It could be improved by adding the detail of creating separate tests for each assertion and using meaningful names for tests. I should have copied the entire quiz.py into the prompt, since it did not find the file from the sample_app directory.
+Evaluate the AI-generated tests. What did the model do well? What did it struggle with? Would you accept these tests as is to test this system in a production environment? Why or why not?
+The model did a good job of commenting the tests and covering all branches. It struggled to name the tests in the convention that would be expected of a test file and confusedly called the file quiz.py rather than accessing the local file quiz.py. I would not accept these tests because they do not test the right functions of the file.
+If applicable, provide insights on whether the AI-generated tests passed or failed and the effectiveness of the generated tests in terms of code coverage. If you were unable to assess this, please explain why.
+I was unable to assess the coverage, because the tests did not apply to the quiz.py file. The code coverage was 0% for the provided quiz.py.
+What are your experiences with using AI tools for testing? Summarize your and your classmates responses in the discussion (e.g., others' experiences, tools used, etc.).
+I have used AI tools such as GitHub Copilot to create test files for me and my classmate has used ChatGPT for test writing. We found AI very useful for this task.
+How did the agentic approach in this task compare to the prompt-based approach for Task 3? Please discuss the process to generate tests in addition to critiquing the output generated tests.
+I was unable to run the agent and encountered timeout errors. I prefer the prompt-based approach for its simplicity and think using agents for simple tests can sometimes be unnecessary.
+What criteria did you set for the test and verify skills? Why?
+For testing skills, my criteria was that the the test names are descriptive and that tests run quickly and independently. For verifying skills, my criteria was that the tests succeeded and covered all edge cases.
+If you had more time, what other checks and functionality would you include in the agents?
+I would have instructed the agents to write summaries of the tests in the comments to improve understandability and reproducibility.
+In general, what are your perceptions on the future of testing and maintenance in the age of AI?
+Overall, AI is an extremely useful tool for testing and maintenance. It made the process significantly faster and allowed me to uncover errors that previously would have taken significantly longer to catch. 
